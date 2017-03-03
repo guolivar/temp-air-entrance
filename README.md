@@ -16,12 +16,12 @@ The system consists of a motion sensor, speakers and a Raspberry Pi (https://www
 
 ## Requirements
 1. PIR sensor (https://nicegear.co.nz/sensors/dfrobot-pir-motion-sensor/)
-2. Raspberry Pi 2 (https://nicegear.co.nz/raspberry-pi/raspberry-pi-3/)
-3. Fedora 25 for ARM (https://arm.fedoraproject.org/). I prefer LXDE but any spin can be made to work.
+2. Raspberry Pi (https://nicegear.co.nz/raspberry-pi/raspberry-pi-3/). Any version will work but the sound is better with a RPi2 or above.
+3. Linux image for the hardware you have. The guide here was tested with Raspbian Jessie but you can try other flavours. (https://www.raspberrypi.org/downloads/)
 4. Speakers (https://www.pbtech.co.nz/product/SPKLOG2453263/Logitech-Z200-Speaker---Black)
 
 ## Setup
-1. Load Fedora 25 on the Raspberry Pi. The Fedora Arm Installer is a great tool! (https://fedoraproject.org/wiki/Architectures/ARM/F25/Installation#Fedora_Arm_Installer)
+1. Prepare the SDcard for the Raspberry Pi. The Fedora Arm Installer is a great tool! (https://fedoraproject.org/wiki/Architectures/ARM/F25/Installation#Fedora_Arm_Installer) or you can go "manual" and follow the steps here: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 2. Install this repository
 3. Setup a cron job for the main script so that it runs at boot. See `cron-job-sample.txt`
 3. Wire the trigger pin of the motion sensor to one of the GPIO pins
