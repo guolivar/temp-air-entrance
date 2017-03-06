@@ -11,9 +11,11 @@ import subprocess
 
 
 class AutoTrigger():
+
     def call_omxplayer(self):
         print ("playing " + self.file_path)
-        pid = subprocess.call(['omxplayer', self.file_path], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+        pid = subprocess.call(['omxplayer', self.file_path],
+                              stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         self.is_running = False
 
     def play_song(self):
@@ -30,13 +32,13 @@ class AutoTrigger():
         '''
             This is a hack (the callback) thanks for python closures!
         '''
-        GPIO.add_event_detect(self.pin, GPIO.FALLING, callback=lambda x: self.play_song(), bouncetime=10)
+        GPIO.add_event_detect(self.pin, GPIO.FALLING,
+                              callback=lambda x: self.play_song(), bouncetime=10)
 
 
 def main():
     GPIO.setmode(GPIO.BCM)
-    AutoTrigger(25, '/home/pi/FolderName/SongName.wav')
-    AutoTrigger(24, '/home/pi/FolderName/SongName2.mp3')
+    AutoTrigger(4, '/home/pi/Music/entry.mp3')
 
     print ("Ready: !")
     try:
